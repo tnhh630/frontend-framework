@@ -1,0 +1,30 @@
+<style>
+    .colored-background-true {
+        color: rgb(63, 236, 135);
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .colored-background-false {
+        color: rgb(247, 44, 71);
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .colored-background-answer {
+        color: rgb(17, 0, 253);
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+</style>
+<div class="container mt-5">
+  <div class="card rounded" style="background-image: url('../Asm/images/shiba.png');">
+    <div class="" ng-repeat="ch in cauhoichon track by $index|limitTo:1">
+      <h4 class="card-title ">{{ch.Text}}</h4>
+      <p class="card-text" ng-class="{'colored-background-true': ch.Cauchon == ch.AnswerId && ch.Cauchon == as.Id, 'colored-background-false': ch.Cauchon != ch.AnswerId && ch.Cauchon == as.Id, 'colored-background-answer': ch.AnswerId == as.Id}" ng-repeat="as in ch.Answers">{{as.Text}}</p>
+    </div>
+  </div>
+</div>

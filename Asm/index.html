@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp" ng-controller="layoutCtrl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="google-signin-client_id"
+        content="369999691417-cg9r5mejon9keookk214orn2nus0obgs.apps.googleusercontent.com">
+    <title>Shibe Quiz Online</title>
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/poly.css" />
+    <!-- jquery -->
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <link rel="icon" type="image/png" href="images/icons/senju.ico" />
+
+
+
+    <style>
+       
+        body{
+            background-image: url('../Asm/images/bg.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .sticky+.content {
+            padding-top: 105px;
+        }
+
+        article {
+            min-height: 1000px;
+        }
+    </style>
+    <!-- angular -->
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.8.0/angular-route.min.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.10/sweetalert2.min.js"
+        integrity="sha512-1Jkfcq8ZUmwWGIEHdejGoqwEJp/Zx6r6BKxCpLGHZ7GqJZfYS+VD/Ti9eSlvhFkDBq6ZalxKSU9K8FQtfexe9w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.10/sweetalert2.all.js"
+        integrity="sha512-IfkSvqlMpxzreUAlVjc5l8jTtEESZ+Ag/l9EkDPhvHIwskFzL6aYKJiP23641mk0C1Xwt5JoBfM4rbnjFeAUOw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.10/sweetalert2.min.css"
+        integrity="sha512-cyIcYOviYhF0bHIhzXWJQ/7xnaBuIIOecYoPZBgJHQKFPo+TOBA+BY1EnTpmM8yKDU4ZdI3UGccNGCEUdfbBqw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script> 
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <script src="https://kit.fontawesome.com/b88b006b4d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- header -->
+  
+
+    <!-- nav -->
+
+    <nav class=" site-menu col navbar navbar-expand-lg navbar-light bg-white w-100 "  id="myHeader" >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item active">
+                    <a class="nav-link " class="login100-form-title" href="#!home"> <i class="fas fa-home "></i> Trang
+                        chủ
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!about"> <i class="fas fa-list-ul"></i> Giới thiệu</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#!contact"><i class="fas fa-phone"></i> Liên hệ</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#!feedback"><i class="fas fa-envelope"></i> Góp ý</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#!faq"> <i class="fas fa-question"></i> Hỏi đáp</a>
+                </li>
+
+                <li class=" dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> Tài khoản
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item"  href="#!account/login"> Đăng nhập</a>
+                        <a class="dropdown-item" href="#!account/forgot">Quên mật khẩu</a>
+                        <a class="dropdown-item" href="#!account/register">Register</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item"  ng-click="logout();">Đăng xuất</a>                     
+                        <a class="dropdown-item" href="#!account/update">Cập nhật hồ sơ</a>
+
+
+                    </div>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="" class="nav-link">English</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Tiếng Việt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- end-nav -->
+    <div class=" row">
+        <article class="col-sm-12" style="min-height: 1200px;">
+            <div ng-show="loading" class="pull-right lable label-info">Loading...</div>
+            <div ng-view> </div>
+        </article>
+
+    </div>
+    <!-- danh mục thi -->
+    <div ng-controller="subjectctrl">
+        <h3 class="text-center">Danh mục thi</h3>
+        <h5 class="text-center">Chọn phần thi theo bộ môn bạn đang học</h2>
+            <div class="row">
+                <div class="col-3" ng-repeat="mh in cacmonhoc|orderBy:'Name'|limitTo:pageSize:start ">
+                    <div class="card mb-4">
+                        <div class="card-body rounded" style="height: 350px;">
+                            <img src="../Asm/images/logos/{{mh.Logo|uppercase}}" class="img-fluid w-100 col " alt="">
+                            <div>{{mh.Name|uppercase}}</div>
+
+
+                        </div>
+                        <div class="card-footer"><button id="a" class="btn btn-info w-100 " ng-click="test(mh.Id,mh.Name)">Vào thi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    <div class="row" style="margin-left: 490px;" >
+        <button ng-click="first()" class="col-1  btn btn-success " style="margin-left: 65px;"><i class="fas fa-step-backward"></i> </button>
+        <button ng-click="prev()" class="col-1 ml-3 btn btn-success"><i class="fas fa-backward"></i> </button>
+        <button ng-click="next()" class="col-1 ml-3  btn btn-success" ><i class="fas fa-forward"></i> </button>
+        <button ng-click="last()" class="col-1 ml-3 btn btn-success"><i class="fas fa-step-forward"></i> </button>
+    </div>
+</div>
+    <!-- end-danh mục thi -->
+    <footer class="row">
+        <p class="m-auto text-center text-dark">FPT Polytechnic &copy; 2021. All rights resevred.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+       <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+       <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/dangky.js"></script>
+    <script src="js/updateCtrl.js"></script>
+    <script >
+        const firebaseConfig = {
+    apiKey: "AIzaSyBxDAdx_zw5yRDzwDpwMvh2MHHw2yNz73M",
+    authDomain: "font-end-c7b53.firebaseapp.com",
+    projectId: "font-end-c7b53",
+    storageBucket: "font-end-c7b53.appspot.com",
+    messagingSenderId: "369999691417",
+    appId: "1:369999691417:web:d38c22a8730f8718dcc208",
+    measurementId: "G-MJDZ2XDRB8"   
+  };
+  firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+    
+
+    
+</body>
+
+</html>

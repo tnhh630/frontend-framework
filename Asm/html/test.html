@@ -1,0 +1,56 @@
+<style>
+  card{
+    min-height: 500px;
+  }
+</style>
+<div class="modal fade" id="modalLRFormDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+      <div class="modal-content">        
+          <div class="modal-body text-center mb-1">
+            <div class="modal-header">
+          </div>
+              <div class="h3 text-center py-2">
+                  Bạn đã chắc chắn với đáp án?
+              </div>
+              <div class="row p-0">
+                  <button type="button" class="btn btn-warning waves-effect col-lg-5 ml-3" data-dismiss="modal">Không</button>
+                  <button ng-click="mark(); elem[begin].sub = 0" class="btn btn-primary waves-effect ml-3 col-lg-5 " data-dismiss="modal">Có <i class="fas fa-sign-in-alt ml-1"></i></button>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+<div class="border  mt-5" style=" border-radius: 10px;  margin-left: 0px; " ng-repeat="ch in caccauhoi|limitTo:1:begin" >
+  
+  <div class="card " style="max-height: 700px; max-width: 1500px; ">
+    <div class="card-header text-center row">
+      <button class="btn btn-danger col-2" style="max-width: 300px;" ng-click="finish()">Kết thúc</button>
+    
+      <h3 class="text-center col-6 text-danger">Bài thi: {{subject.Name}}</h3>
+      <i style="width: 200px;" class="col-4 text-right far fa-clock text-white">  Thời gian: {{min}}:{{sec}}</i>
+    </div>
+    <form name="formTest">
+    <div class="card-body" style="height: 250px;">
+      <div class="form-check" >
+        
+        <h4 class="text-warning" >
+          {{ch.Text}}
+        </h3>
+      </div>
+      <div class="form-check" ng-repeat="pa in ch.Answers">
+        <input class="form-check-input" ng-model="elem[begin].answer" type="radio"  name="pa" value="{{pa.Id}}" >
+        <label class="form-check-label " for="exampleRadios1">
+          {{pa.Text}}
+        </label>
+      </div>
+    </div>
+  </form>
+   
+     <div class="card-footer row">
+      <button class="btn btn-info mr-2 w-20"><i class="fas fa-backward" ng-click="prev()"></i></button>
+      <button class="btn btn-info mr-2 w-20" ng-click="move(begin+1)"><i class="fas fa-forward" ></i></button>
+      <button ng-disabled="elem[begin].sub==0 || formTest.pa.$invalid" class="btn btn-info mr-2 w-20" data-toggle="modal" data-target="#modalLRFormDemo">Trả lời</button>
+    </div> 
+  </div>
+</div>

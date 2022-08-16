@@ -1,0 +1,65 @@
+<style>
+    .fakeimg {
+      height: 200px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .profile{
+        background-image: url('{{imagegg}}');
+      height: 100px;
+      background-repeat: no-repeat;
+    }
+    .Shibe{
+        background-image: url('../Asm/images/shiba.png');
+      height: 400px;
+      background-repeat: no-repeat;
+    }
+    .bg{
+        border-radius: 10px;
+        background-color: rgba(175, 224, 241, 0.651);
+        /* background-image: url('../Asm/images/whale.png'); */
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    </style>
+<div class="container mt-5 bg" >
+    <h1>Hello {{email}}!</h1>
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+          <div class="col-sm-4">
+            <h2>About Me</h2>
+            <h5>Photo of me:</h5>
+            <div class="profile"></div>
+            <p>Người này lười lắm không chịu viết tiểu sử gì!</p>
+            <h3>Profile</h3>
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" >{{email}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#!account/update">Cập nhật hồ sơ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark " ng-click="logout();">Đăng xuất</a>
+              </li>
+            
+            </ul>
+            <hr class="d-sm-none">
+          </div>
+          <div class="col-sm-8">
+            <h3>Welcome to league of <spam style="color: blue;">Shibe </span> QUIZ ONLINE</h3>
+            <h5>HỌC LẬP TRÌNH
+                TỪ CON SỐ 0
+                Khởi đầu dễ dàng hơn với Shibe Quiz Online</h5>
+            <div class="Shibe"></div>
+            <b>Tập đoàn Shibe..</b>
+            <i> Được thành lập sơ khai gồm 5 thành viên cùng học chung lớp UDPM trường cao đẳng FPT Polytechnic hợp tác thành lập.
+                Chúng tôi đã tạo ra web Shibe Quiz Online  Nhắm giúp đỡ học sinh làm quiz tốt hơn.
+            </i>
+            <br>
+            
+          </div>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,58 @@
+<style>
+     
+    .btn-login {
+      font-size: 0.9rem;
+      letter-spacing: 0.05rem;
+      padding: 0.75rem 1rem;
+    }
+    
+    .btn-google {
+      color: white !important;
+      background-color: #ea4335;
+    }
+    
+    .btn-facebook {
+      color: white !important;
+      background-color: #3b5998;
+    }
+  </style>
+      <div class="row mt-5">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card border-0 shadow rounded-10 my-5">
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">Đăng ký</h5>
+              <form>
+                <div class="form-floating mb-3">
+                  <label for="floatingInput">Họ và tên</label>
+                  <input type="text" class="form-control" ng-bind="tcten" ng-model="fullname" name="fullnamename" id="name"
+                      placeholder="Fullname" />
+              </div>
+                <div class="form-floating mb-3">
+                  <label for="floatingInput">Địa chỉ Email</label>
+                  <input type="email" class="form-control"  placeholder="name@example.com" ng-bind="tcemail" ng-model="email" name="email" id="email">
+                  
+                </div>
+                <div class="form-floating mb-3">
+                  <label for="floatingPassword">Mật khẩu mới</label>
+                  <input type="password" class="form-control" ng-bind="tcpass1" ng-model="password" name="password" id="password" placeholder="Password">
+                 
+                </div>
+                
+                <div class="form-floating mb-3">
+                  <label for="floatingPassword">Xác nhận mật khẩu</label>
+                  <input type="password" class="form-control" ng-bind="tcpass" ng-model="repassword" name="re_password"
+                      id="re_password" placeholder="Confilm Password" />
+              </div>
+              
+  
+              
+                <div class= "text-center">
+                  <button class="btn btn-success  " type="submit" ng-click="dangky();">Đăng ký
+                    </button>
+                </div>                                 
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    

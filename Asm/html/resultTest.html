@@ -1,0 +1,22 @@
+
+<table class="table" style="background-image: url('../Asm/images/shiba.png');">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID câu hỏi</th>
+        <th>Câu hỏi</th>        
+        <th>Điểm</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="ch in caccauhoi|limitTo:10">
+      <tr>
+        <th class="">{{ch.Id}}</th>
+        <td class=""><a id="text" href="#!/detailResult/{{ch.Id}}" ng-click="detail()">"{{ch.Text}}"</a></td>       
+        <td class="">{{ch.Marks}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  
+  
+  
